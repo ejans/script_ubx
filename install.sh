@@ -1,21 +1,13 @@
 #!/bin/bash
 
-## CONFIGURE ME!!
-SOURCE_PATH=/home/haianos/test_micro
-INSTALL_PATH=/home/haianos/test_micro/install
+export UBX_ROOT=$HOME/microblx/microblx
+export UBX_MODULES=$HOME/microblx/install/lib/ubx
+export CMAKE_PREFIX_PATH=$HOME/microblx/install/share/ubx/cmake
 
-pkgs=(std_triggers std_random kdl_types cartesiangen rml_trajgen)
+SOURCE_PATH=$HOME/microblx/
+INSTALL_PATH=$HOME/microblx/install/
 
-## AutoEnv 
-export UBX_ROOT="$SOURCE_PATH/microblx"
-# source $UBX_ROOT/env.sh
-export UBX_MODULES="$INSTALL_PATH/lib/ubx"
-
-# groovy only for KDL, it under ros install, not syst dependency.
-export CMAKE_PREFIX_PATH=/opt/ros/groovy:/home/haianos/test_micro/install/share/ubx/cmake
-
-# Comment me if I don't have/want Reflexxes
-export REFLEXXES_ROOT=/home/haianos/deleteme/ReflexxesTypeII
+pkgs=(std_triggers std_random kdl_types)
 
 ####
 ## Start Install Script
@@ -41,8 +33,8 @@ set_colors()
 install_microblx()
 {
   echo "${lred}Installing Microblx framework${std}"
-  mkdir $SOURCE_PATH
-  mkdir $INSTALL_PATH
+  mkdir -p $SOURCE_PATH
+  mkdir -p $INSTALL_PATH
   cd $SOURCE_PATH
   git clone git://github.com/haianos/microblx.git
   cd microblx

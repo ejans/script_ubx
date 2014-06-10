@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export UBX_ROOT=/home/haianos/test_micro/microblx
+export UBX_ROOT=$HOME/microblx/microblx
 source $UBX_ROOT/env.sh
-export UBX_MODULES=/home/haianos/test_micro/install/lib/microblx
-export CMAKE_PREFIX_PATH=/opt/ros/groovy:/home/haianos/test_micro/install/share/microblx/cmake
-export REFLEXXES_ROOT=/home/haianos/deleteme/ReflexxesTypeII
+export UBX_MODULES=$HOME/microblx/install/lib/ubx
+export CMAKE_PREFIX_PATH=$HOME/microblx/install/share/ubx/cmake
